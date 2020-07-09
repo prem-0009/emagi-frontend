@@ -15,17 +15,17 @@ const random = process.argv[2] === "random";
 let result = "";
 
 if (
-  (search && userWord && fourthWord) ||
-  (random && userWord) ||
-  (convert && userWord && fourthWord)
+  (search && fourthWord) ||
+  (random && userWord) 
+//   (convert && fourthWord)
 ) {
   result = `input the word/s in correct format`;
 } else if (search && userWord) {
-  result += searchEmojis(userWord).join(" ");
+  result = searchEmojis(userWord).join(" ");
 } else if (convert && userText) {
-  result += convertWords(userText).join(" ");
+  result = convertWords(userText).join(" ");
 } else if (random) {
-  result += randomEmojis(symbols);
+  result = randomEmojis(symbols);
 }
 
 console.log(result);
